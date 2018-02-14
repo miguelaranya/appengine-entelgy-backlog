@@ -33,6 +33,6 @@ public class AuthenticateServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setHeader(IAP_AUTHENTICATED_USER_HEADER, request.getHeader(IAP_JWT_HEADER));
+    response.getWriter().write(request.getHeader(IAP_JWT_HEADER));
   }
 }
