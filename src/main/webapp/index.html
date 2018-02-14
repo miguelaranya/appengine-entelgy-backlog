@@ -116,7 +116,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             if (basic.test(xhr.response) || full.test(xhr.response)) {
               token_user = undefined;
             } else {
-              token_user = xhr.response;
+              token_user = JSON.parse(xhr.response);
             }
           }
         }
