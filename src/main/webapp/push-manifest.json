@@ -1,18 +1,186 @@
 {
   "src/my-app.html": {
-    "bower_components/polymer/polymer.html": {
+    "bower_components/polymer/polymer-element.html": {
       "type": "document",
       "weight": 1
     },
-    "bower_components/polymer/polymer-mini.html": {
+    "bower_components/polymer/lib/mixins/element-mixin.html": {
       "type": "document",
       "weight": 1
     },
-    "bower_components/polymer/polymer-micro.html": {
+    "bower_components/polymer/lib/utils/boot.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/settings.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/resolve-url.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/style-gather.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-module.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-effects.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/path.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/case-map.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-accessors.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/properties-changed.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/async.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/template-stamp.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/properties-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/html-tag.html": {
       "type": "document",
       "weight": 1
     },
     "bower_components/app-layout/app-drawer/app-drawer.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/polymer.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/legacy/legacy-element-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/shadycss/apply-shim.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/shadycss/apply-shim.min.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/gesture-event-listeners.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/gestures.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/debounce.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/dir-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/import-href.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/render-status.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/unresolved.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/legacy/polymer.dom.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/flattened-nodes-observer.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/array-splice.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/flush.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/legacy/polymer-fn.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/legacy/class.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/legacy/templatizer-behavior.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/templatize.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/mutable-data.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-bind.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-repeat.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-if.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/array-selector.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/custom-style.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/shadycss/custom-style-interface.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/shadycss/custom-style-interface.min.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/legacy/mutable-data-behavior.html": {
       "type": "document",
       "weight": 1
     },
@@ -25,6 +193,10 @@
       "weight": 1
     },
     "bower_components/iron-media-query/iron-media-query.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/app-layout/app-layout-behavior/app-layout-behavior.html": {
       "type": "document",
       "weight": 1
     },
@@ -172,52 +344,305 @@
       "type": "document",
       "weight": 1
     },
-    "bower_components/iron-icons/iron-icons.html": {
+    "src/my-icons.html": {
       "type": "document",
       "weight": 1
     },
     "bower_components/iron-iconset-svg/iron-iconset-svg.html": {
       "type": "document",
       "weight": 1
-    },
-    "bower_components/paper-image/paper-image.html": {
-      "type": "document",
-      "weight": 1
-    },
-    "bower_components/paper-material/paper-material.html": {
-      "type": "document",
-      "weight": 1
-    },
-    "bower_components/paper-styles/shadow.html": {
-      "type": "document",
-      "weight": 1
-    },
-    "bower_components/paper-material/paper-material-shared-styles.html": {
-      "type": "document",
-      "weight": 1
-    },
-    "src/my-icons.html": {
-      "type": "document",
-      "weight": 1
     }
   },
   "src/my-view1.html": {
+    "bower_components/polymer/polymer-element.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/element-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/boot.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/settings.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/resolve-url.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/style-gather.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-module.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-effects.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/path.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/case-map.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-accessors.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/properties-changed.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/async.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/template-stamp.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/properties-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/html-tag.html": {
+      "type": "document",
+      "weight": 1
+    },
     "src/shared-styles.html": {
       "type": "document",
       "weight": 1
     }
   },
   "src/my-view2.html": {
+    "bower_components/polymer/polymer-element.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/element-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/boot.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/settings.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/resolve-url.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/style-gather.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-module.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-effects.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/path.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/case-map.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-accessors.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/properties-changed.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/async.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/template-stamp.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/properties-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/html-tag.html": {
+      "type": "document",
+      "weight": 1
+    },
     "src/shared-styles.html": {
       "type": "document",
       "weight": 1
     }
   },
   "src/my-view3.html": {
+    "bower_components/polymer/polymer-element.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/element-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/boot.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/settings.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/resolve-url.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/style-gather.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-module.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-effects.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/path.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/case-map.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-accessors.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/properties-changed.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/async.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/template-stamp.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/properties-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/html-tag.html": {
+      "type": "document",
+      "weight": 1
+    },
     "src/shared-styles.html": {
       "type": "document",
       "weight": 1
     }
   },
-  "src/my-view404.html": {}
+  "src/my-view404.html": {
+    "bower_components/polymer/polymer-element.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/element-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/boot.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/settings.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/resolve-url.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/style-gather.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/elements/dom-module.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-effects.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/path.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/case-map.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/property-accessors.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/properties-changed.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/async.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/template-stamp.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/mixins/properties-mixin.html": {
+      "type": "document",
+      "weight": 1
+    },
+    "bower_components/polymer/lib/utils/html-tag.html": {
+      "type": "document",
+      "weight": 1
+    }
+  }
 }

@@ -18,7 +18,7 @@ Copyright 2017 Google Inc.
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <groupId>com.appengine.entelgy</groupId>
-  <artifactId>backlog</artifactId>
+  <artifactId>appengine-entelgy-backlog</artifactId>
 
   <!--
     The parent pom defines common style checks and testing strategies for our samples.
