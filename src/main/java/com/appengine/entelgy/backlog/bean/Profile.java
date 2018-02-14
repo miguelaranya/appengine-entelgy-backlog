@@ -25,11 +25,31 @@ import com.google.appengine.api.users.User;
  */
 public class Profile {
 
+  private String userId;
+
+  private String federateIdentity;
+
   private String username;
+
+  private String nickname;
 
   private String email;
 
-  private String domain;
+  public String getUserId() {
+    return userId;
+  }
+
+  public void setUserId(String userId) {
+    this.userId = userId;
+  }
+
+  public String getFederateIdentity() {
+    return federateIdentity;
+  }
+
+  public void setFederateIdentity(String federateIdentity) {
+    this.federateIdentity = federateIdentity;
+  }
 
   public String getUsername() {
     return username;
@@ -39,27 +59,19 @@ public class Profile {
     this.username = username;
   }
 
+  public String getNickname() {
+    return nickname;
+  }
+
+  public void setNickname(String nickname) {
+    this.nickname = nickname;
+  }
+
   public String getEmail() {
     return email;
   }
 
   public void setEmail(String email) {
     this.email = email;
-  }
-
-  public String getDomain() {
-    return domain;
-  }
-
-  public void setDomain(String domain) {
-    this.domain = domain;
-  }
-
-  public static final Profile getProfile(User user) {
-    Profile profile = new Profile();
-    profile.setUsername(user.getNickname());
-    profile.setEmail(user.getEmail());
-    profile.setDomain(user.getAuthDomain());
-    return profile;
   }
 }

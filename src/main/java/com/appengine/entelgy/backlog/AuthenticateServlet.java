@@ -43,9 +43,15 @@ public class AuthenticateServlet extends HttpServlet {
 
     UserService userService = UserServiceFactory.getUserService();
     if (request.getUserPrincipal() != null) {
+      Profile profile = new Profile();
+      profile.setUserId(userService.getCurrentUser().getUserId());
+      profile.setFederateIdentity(userService.getCurrentUser().getFederatedIdentity());
+      profile.setUsername(request.getUserPrincipal().getName());
+      profile.setNickname(userService.getCurrentUser().getNickname());
+      profile.setEmail(userService.getCurrentUser().getEmail());
+
       response.setContentType("application/json");
-      response.getWriter().write(new Gson()
-              .toJson(Profile.getProfile(userService.getCurrentUser())));
+      response.getWriter().write(new Gson().toJson(profile));
     }
   }
 }
