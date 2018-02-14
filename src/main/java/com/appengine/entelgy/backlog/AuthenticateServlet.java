@@ -17,17 +17,12 @@
 package com.appengine.entelgy.backlog;
 
 import com.appengine.entelgy.backlog.bean.Profile;
-import com.google.appengine.api.users.UserService;
-import com.google.appengine.api.users.UserServiceFactory;
-import com.google.appengine.repackaged.com.google.api.client.extensions.appengine.http.UrlFetchTransport;
-import com.google.appengine.repackaged.com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
-import com.google.appengine.repackaged.com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import com.google.appengine.repackaged.com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.appengine.repackaged.com.google.gson.Gson;
 
 import java.io.IOException;
-import java.security.GeneralSecurityException;
-import java.util.Collections;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,43 +37,12 @@ public class AuthenticateServlet extends HttpServlet {
 
   private static final String IAP_JWT_HEADER = "x-goog-iap-jwt-assertion";
   private static final String IAP_AUTHENTICATED_USER_HEADER = "x-goog-authenticated-user-jwt";
-  private static final String CLIENT_ID =
-          "61339267913-3f1ppvrnpcv6ntg5l710p6p6vstt0fa2.apps.googleusercontent.com";
 
   private static final JacksonFactory jacksonFactory = new JacksonFactory();
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    //response.getWriter().write(request.getHeader(IAP_JWT_HEADER));
-
-    String token = request.getHeader(IAP_JWT_HEADER);
-
-    GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier
-            .Builder(UrlFetchTransport.getDefaultInstance(), jacksonFactory)
-            .setAudience(Collections.singletonList(CLIENT_ID))
-            .build();
-
-    UserService userService = UserServiceFactory.getUserService();
-    GoogleIdToken tokenId;
-    try {
-      tokenId = verifier.verify(token);
-    } catch (GeneralSecurityException e) {
-      tokenId = null;
-    }
-    if (tokenId != null) {
-      GoogleIdToken.Payload payload = tokenId.getPayload();
-
-      Profile profile = new Profile();
-      profile.setUserId(userService.getCurrentUser().getUserId());
-      profile.setUsername((String) payload.get("given_name"));
-      profile.setNickname((String) payload.get("name"));
-      profile.setEmail(payload.getEmail());
-      profile.setPicture((String) payload.get("picture"));
-
-      response.setContentType("application/json");
-      response.getWriter().write(new Gson().toJson(profile));
-    } else {
-      response.getWriter().write(new Gson().toJson(tokenId));
-    }
+    DecodedJWT jwt = JWT.decode(request.getHeader(IAP_JWT_HEADER));
+    response.getWriter().write(new Gson().toJson(Profile.getProfile(jwt)));
   }
 }
