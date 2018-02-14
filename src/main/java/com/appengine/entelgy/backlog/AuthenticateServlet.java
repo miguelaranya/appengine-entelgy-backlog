@@ -52,31 +52,33 @@ public class AuthenticateServlet extends HttpServlet {
     //response.getWriter().write(request.getHeader(IAP_JWT_HEADER));
 
     String token = request.getHeader(IAP_JWT_HEADER);
+
     GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier
             .Builder(UrlFetchTransport.getDefaultInstance(), jacksonFactory)
             .setAudience(Collections.singletonList(CLIENT_ID))
-            .setIssuer("accounts.google.com")
             .build();
 
+    UserService userService = UserServiceFactory.getUserService();
+    GoogleIdToken tokenId;
     try {
-      UserService userService = UserServiceFactory.getUserService();
-      GoogleIdToken tokenId = verifier.verify(token);
-
-      if (tokenId != null) {
-        GoogleIdToken.Payload payload = tokenId.getPayload();
-
-        Profile profile = new Profile();
-        profile.setUserId(userService.getCurrentUser().getUserId());
-        profile.setUsername((String) payload.get("given_name"));
-        profile.setNickname((String) payload.get("name"));
-        profile.setEmail(payload.getEmail());
-        profile.setPicture((String) payload.get("picture"));
-
-        response.setContentType("application/json");
-        response.getWriter().write(new Gson().toJson(profile));
-      }
+      tokenId = verifier.verify(token);
     } catch (GeneralSecurityException e) {
-      e.printStackTrace();
+      tokenId = null;
+    }
+    if (tokenId != null) {
+      GoogleIdToken.Payload payload = tokenId.getPayload();
+
+      Profile profile = new Profile();
+      profile.setUserId(userService.getCurrentUser().getUserId());
+      profile.setUsername((String) payload.get("given_name"));
+      profile.setNickname((String) payload.get("name"));
+      profile.setEmail(payload.getEmail());
+      profile.setPicture((String) payload.get("picture"));
+
+      response.setContentType("application/json");
+      response.getWriter().write(new Gson().toJson(profile));
+    } else {
+      response.getWriter().write(new Gson().toJson(tokenId));
     }
   }
 }
