@@ -137,10 +137,10 @@
     </template>
     <script>Polymer({
         is: 'my-app',
-        properties: {page: {type: String, reflectToAttribute: !0, observer: '_pageChanged'}, user: Object},
+        properties: {page: {type: String, reflectToAttribute: !0, observer: '_pageChanged'}, user: Object, token: String},
         observers: ['_routePageChanged(routeData.page)'],
         ready: function () {
-            this.user = null
+            this.token = this._load(document.origin.concat('/token')), this.user = null
         },
         _routePageChanged: function (a) {
             this.page = a || 'view1', this.$.drawer.persistent || this.$.drawer.close()
@@ -154,6 +154,16 @@
         },
         _signOut: function () {
             console.log('Redireccionando...'), window.location.href = '/_gcp_iap/clear_login_cookie'
+        },
+        _load: function(url) {
+            let xhr = new XMLHttpRequest(),
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    return xhr.response;
+                }
+            }
+            xhr.open('GET', url, true);
+            xhr.send('');
         }
     });</script>
 </dom-module>
