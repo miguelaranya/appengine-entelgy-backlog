@@ -156,7 +156,7 @@
             console.log('Redireccionando...'), window.location.href = '/_gcp_iap/clear_login_cookie'
         },
         _load: function(url) {
-            let xhr = new XMLHttpRequest(),
+            var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
                     return xhr.response;
