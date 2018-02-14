@@ -16,14 +16,20 @@
 
 package com.appengine.entelgy.backlog;
 
+import com.appengine.entelgy.backlog.bean.Profile;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
+import com.google.appengine.repackaged.com.google.gson.Gson;
+
 import java.io.IOException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Identity Aware Proxy (IAP) Test application to reflect jwt token issued by IAP. IAP must be
- * enabled on application. {@see https://cloud.google.com/iap/docs/app-engine-quickstart}
+ * Identity Aware Proxy (IAP) Test application to reflect jwt token issued by IAP.
+ * IAP must be enabled on application.
+ * {@see https://cloud.google.com/iap/docs/app-engine-quickstart}
  */
 @SuppressWarnings("serial")
 public class AuthenticateServlet extends HttpServlet {
@@ -33,6 +39,13 @@ public class AuthenticateServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.getWriter().write(request.getHeader(IAP_JWT_HEADER));
+    //response.getWriter().write(request.getHeader(IAP_JWT_HEADER));
+
+    UserService userService = UserServiceFactory.getUserService();
+    if (request.getUserPrincipal() != null) {
+      response.setContentType("application/json");
+      response.getWriter().write(new Gson()
+              .toJson(Profile.getProfile(userService.getCurrentUser())));
+    }
   }
 }
