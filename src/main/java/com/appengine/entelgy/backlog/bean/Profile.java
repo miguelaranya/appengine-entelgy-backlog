@@ -27,13 +27,13 @@ public class Profile {
 
   private String userId;
 
-  private String federateIdentity;
-
   private String username;
 
   private String nickname;
 
   private String email;
+
+  private String picture;
 
   public String getUserId() {
     return userId;
@@ -41,14 +41,6 @@ public class Profile {
 
   public void setUserId(String userId) {
     this.userId = userId;
-  }
-
-  public String getFederateIdentity() {
-    return federateIdentity;
-  }
-
-  public void setFederateIdentity(String federateIdentity) {
-    this.federateIdentity = federateIdentity;
   }
 
   public String getUsername() {
@@ -73,5 +65,13 @@ public class Profile {
 
   public void setEmail(String email) {
     this.email = email;
+  }
+
+  public String getPicture() {
+    return picture;
+  }
+
+  public void setPicture(String picture) {
+    this.picture = picture;
   }
 }
