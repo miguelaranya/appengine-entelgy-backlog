@@ -137,7 +137,7 @@
     </template>
     <script>Polymer({
         is: 'my-app',
-        properties: {page: {type: String, reflectToAttribute: !0, observer: '_pageChanged'}, user: Object, token: String},
+        properties: {page: {type: String, reflectToAttribute: !0, observer: '_pageChanged'}, user: Object},
         observers: ['_routePageChanged(routeData.page)'],
         ready: function () {
             this._load(document.origin.concat('/token')), this.user = null
@@ -159,11 +159,16 @@
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
-                    this.token = xhr.response;
+                    access_token = xhr.response;
                 }
             }
             xhr.open('GET', url, true);
             xhr.send('');
+        },
+        _parseJwt: function(token) {
+            var base64Url = token.split('.')[1];
+            var base64 = base64Url.replace('-', '+').replace('_', '/');
+            console.log(JSON.parse(window.atob(base64)));
         }
     });</script>
 </dom-module>
