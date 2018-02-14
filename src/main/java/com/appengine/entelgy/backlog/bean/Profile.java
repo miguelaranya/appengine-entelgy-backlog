@@ -38,11 +38,13 @@ public class Profile implements Serializable {
 
   private String issuer;
 
+  private String domainSubject;
+
   private String subject;
 
-  private Date expiresAt;
+  private Long expiresAt;
 
-  private Date issuedAt;
+  private Long issuedAt;
 
   private String audit;
 
@@ -74,6 +76,14 @@ public class Profile implements Serializable {
     this.issuer = issuer;
   }
 
+  public String getDomainSubject() {
+    return domainSubject;
+  }
+
+  public void setDomainSubject(String domainSubject) {
+    this.domainSubject = domainSubject;
+  }
+
   public String getSubject() {
     return subject;
   }
@@ -82,19 +92,19 @@ public class Profile implements Serializable {
     this.subject = subject;
   }
 
-  public Date getExpiresAt() {
+  public Long getExpiresAt() {
     return expiresAt;
   }
 
-  public void setExpiresAt(Date expiresAt) {
+  public void setExpiresAt(Long expiresAt) {
     this.expiresAt = expiresAt;
   }
 
-  public Date getIssuedAt() {
+  public Long getIssuedAt() {
     return issuedAt;
   }
 
-  public void setIssuedAt(Date issuedAt) {
+  public void setIssuedAt(Long issuedAt) {
     this.issuedAt = issuedAt;
   }
 
@@ -128,8 +138,13 @@ public class Profile implements Serializable {
     profile.setKeyId(jwt.getKeyId());
     profile.setIssuer(jwt.getIssuer());
     profile.setSubject(jwt.getSubject());
-    profile.setExpiresAt(jwt.getExpiresAt());
-    profile.setIssuedAt(jwt.getIssuedAt());
+    if (profile.getSubject().contains(":")) {
+      String[] subjects = profile.getSubject().split(":");
+      profile.setDomainSubject(subjects[0]);
+      profile.setSubject(subjects[1]);
+    }
+    profile.setExpiresAt(jwt.getExpiresAt().getTime());
+    profile.setIssuedAt(jwt.getIssuedAt().getTime());
     profile.setAudit(jwt.getClaim("aud").asString());
     profile.setDomain(jwt.getClaim("hd").asString());
     profile.setHash(jwt.getClaim("at_hash").asString());

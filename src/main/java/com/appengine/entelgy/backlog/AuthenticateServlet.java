@@ -36,9 +36,6 @@ import javax.servlet.http.HttpServletResponse;
 public class AuthenticateServlet extends HttpServlet {
 
   private static final String IAP_JWT_HEADER = "x-goog-iap-jwt-assertion";
-  private static final String IAP_AUTHENTICATED_USER_HEADER = "x-goog-authenticated-user-jwt";
-
-  private static final JacksonFactory jacksonFactory = new JacksonFactory();
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

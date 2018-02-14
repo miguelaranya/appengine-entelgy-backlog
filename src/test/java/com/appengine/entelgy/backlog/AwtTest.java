@@ -17,6 +17,7 @@
 package com.appengine.entelgy.backlog;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import com.appengine.entelgy.backlog.bean.Profile;
 import com.auth0.jwt.JWT;
@@ -56,6 +57,7 @@ public class AwtTest {
     assertNotNull(profile.getAlgorithm());
     assertNotNull(profile.getKeyId());
     assertNotNull(profile.getIssuer());
+    assertNull(profile.getDomainSubject());
     assertNotNull(profile.getSubject());
     assertNotNull(profile.getExpiresAt());
     assertNotNull(profile.getIssuedAt());
