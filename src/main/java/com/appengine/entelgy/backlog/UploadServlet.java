@@ -70,10 +70,10 @@ public class UploadServlet extends HttpServlet {
     // constructs the directory path to store upload file
     String uploadPath = getServletContext().getRealPath("") + File.separator + UPLOAD_DIRECTORY;
     // creates the directory if it does not exist
-    File uploadDir = new File(uploadPath);
-    if (!uploadDir.exists()) {
-      uploadDir.mkdir();
-    }
+    //File uploadDir = new File(uploadPath);
+    //if (!uploadDir.exists()) {
+    //  uploadDir.mkdir();
+    //}
 
     try {
       // parses the request's content to extract file data
