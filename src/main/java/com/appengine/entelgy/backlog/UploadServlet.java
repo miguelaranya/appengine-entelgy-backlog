@@ -48,8 +48,9 @@ public class UploadServlet extends HttpServlet {
   /**
    * handles file upload via HTTP POST method
    */
+  @Override
   protected void doPost(HttpServletRequest request,
-                        HttpServletResponse response) throws ServletException, IOException {
+                        HttpServletResponse response) throws IOException {
     // checks if the request actually contains upload file
     if (!ServletFileUpload.isMultipartContent(request)) {
       response.getWriter().write("Request does not contain upload data");
@@ -89,7 +90,7 @@ public class UploadServlet extends HttpServlet {
           File storeFile = new File(filePath);
 
           // saves the file on disk
-          item.write(storeFile);
+          //item.write(storeFile);
         }
       }
       message = "Upload has been done successfully!";
