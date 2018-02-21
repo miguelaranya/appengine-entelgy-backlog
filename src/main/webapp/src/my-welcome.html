@@ -1,0 +1,39 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-welcome">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+
+      :root {
+        --iron-image-width: 100%;
+      }
+
+      .img {
+        height: 400px !important;
+        width: 800px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    </style>
+
+    <div class="card img">
+      <div class="headerCard"></div>
+      <iron-image src="../images/welcome_bbva.jpg" style="width:100%; height:100%;"></iron-image>
+      <div class="headerCard"></div>
+    </div>
+  </template>
+
+  <script>
+    class MyWelcome extends Polymer.Element {
+      static get is() { return 'my-welcome'; }
+    }
+
+    window.customElements.define(MyWelcome.is, MyWelcome);
+  </script>
+</dom-module>

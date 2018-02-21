@@ -98,6 +98,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <my-view2 name="view2"></my-view2>
           <my-view3 name="view3"></my-view3>
           <my-view404 name="view404"></my-view404>
+          <my-welcome name="welcome"></my-welcome>
         </iron-pages>
       </app-header-layout>
     </app-drawer-layout>
@@ -136,7 +137,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _routePageChanged(page) {
         // If no page was found in the route data, page will be an empty string.
         // Default to 'view1' in that case.
-        this.page = page || 'view1';
+        this.page = page || 'welcome';
 
         // Close a non-persistent drawer when the page & route are changed.
         if (!this.$.drawer.persistent) {
@@ -147,11 +148,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _pageChanged(page) {
         // Load page import on demand. Show 404 page if fails
         var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
-        Polymer.importHref(
-            resolvedPageUrl,
-            null,
-            this._showPage404.bind(this),
-            true);
+        Polymer.importHref(resolvedPageUrl, null, this._showPage404.bind(this), true);
       }
 
       _showPage404() {
