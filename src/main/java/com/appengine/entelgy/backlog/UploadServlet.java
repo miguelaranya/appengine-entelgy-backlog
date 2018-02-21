@@ -52,9 +52,7 @@ public class UploadServlet extends HttpServlet {
                         HttpServletResponse response) throws ServletException, IOException {
     // checks if the request actually contains upload file
     if (!ServletFileUpload.isMultipartContent(request)) {
-      PrintWriter writer = response.getWriter();
-      writer.println("Request does not contain upload data");
-      writer.flush();
+      response.getWriter().write("Request does not contain upload data");
       return;
     }
 
@@ -75,6 +73,7 @@ public class UploadServlet extends HttpServlet {
     //  uploadDir.mkdir();
     //}
 
+    String message;
     try {
       // parses the request's content to extract file data
       List formItems = upload.parseRequest(request);
@@ -93,10 +92,13 @@ public class UploadServlet extends HttpServlet {
           item.write(storeFile);
         }
       }
-      request.setAttribute("message", "Upload has been done successfully!");
+      message = "Upload has been done successfully!";
+      request.setAttribute("message", message);
     } catch (Exception ex) {
-      request.setAttribute("message", "There was an error: " + ex.getMessage());
+      message = "There was an error: " + ex.getMessage();
+      request.setAttribute("message", message);
     }
+    response.getWriter().write(message);
     //getServletContext().getRequestDispatcher("/message.jsp").forward(request, response);
   }
 }
